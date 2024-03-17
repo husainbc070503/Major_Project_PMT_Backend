@@ -134,7 +134,6 @@ router.post('/create-event', async (req, res) => {
     try {
         const { code } = req.query;
         const { summary, description, location, start, end, members, _id } = req.body;
-        console.log(req.body);
 
         const { tokens } = await oAuth2Client.getToken(code);
         oAuth2Client.setCredentials(tokens);
