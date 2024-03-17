@@ -111,7 +111,8 @@ const passwordUpdateMail = async (name, email) => {
 const oAuth2Client = new google.auth.OAuth2(
     process.env.GOOGLE_CLIENT_ID,
     process.env.GOOGLE_CLIENT_SECRET,
-    'http://localhost:3000'
+    'https://project-pmt.netlify.app'
+    // 'http://localhost:3000'
 );
 
 router.get('/callback', async (req, res) => {
