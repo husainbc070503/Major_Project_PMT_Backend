@@ -217,7 +217,7 @@ router.put('/requestGuide/:id/:pid', FetchUser, async (req, res) => {
 
 router.put('/deleteMeetEvent/:id', FetchUser, async (req, res) => {
     try {
-        var project = await Project.findOneAndUpdate(req.params.id, { meetDetails: null }, { new: true })
+        var project = await Project.findByIdAndUpdate(req.params.id, { meetDetails: null }, { new: true })
             .populate('team')
             .populate('user', '-password')
             .populate('guide', '-password');
